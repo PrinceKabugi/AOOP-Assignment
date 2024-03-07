@@ -1,0 +1,87 @@
+// Person class
+public class Person {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+// Patient class
+public class Patient extends Person {
+    private String condition;
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+}
+
+// Doctor class
+public class Doctor extends Person {
+    private String specialization;
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+}
+
+// Hospital class
+public class Hospital {
+    private Doctor doctor;
+    private Patient patient;
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void displayHospitalDetails() {
+        System.out.println("Hospital Details:");
+        if (doctor != null) {
+            System.out.println("Doctor Details:");
+            doctor.displayDetails();
+            System.out.println("Specialization: " + doctor.getSpecialization());
+        }
+        if (patient != null) {
+            System.out.println("Patient Details:");
+            patient.displayDetails();
+            System.out.println("Condition: " + patient.getCondition());
+        }
+    }
